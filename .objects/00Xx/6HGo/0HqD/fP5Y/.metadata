@@ -1,0 +1,14 @@
+﻿{
+  "Name": "Escribir en 'INPUT valor1'",
+  "Type": "Element",
+  "TaxonomyType": "Input",
+  "Id": "fP5YSa6VyU-0YptKSRdlvA",
+  "Reference": "pyrFxN0gFESAa0tjtCFSNA/fP5YSa6VyU-0YptKSRdlvA",
+  "ParentRef": "pyrFxN0gFESAa0tjtCFSNA/0HqD20epgUeFhZeHdi8yJQ",
+  "Created": "2024-05-14T21:28:47.4311522Z",
+  "Updated": "2024-05-14T21:28:47.4311522Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=24.4.1.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=24.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

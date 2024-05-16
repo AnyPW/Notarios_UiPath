@@ -1,0 +1,13 @@
+﻿{
+  "Name": "Edge ntp.msn.comedgentplocale=en-GB&title=New",
+  "Type": "Screen",
+  "Id": "0HqD20epgUeFhZeHdi8yJQ",
+  "Reference": "pyrFxN0gFESAa0tjtCFSNA/0HqD20epgUeFhZeHdi8yJQ",
+  "ParentRef": "pyrFxN0gFESAa0tjtCFSNA/6HGoIfKLDUuFKvep36cuow",
+  "Created": "2024-05-14T21:28:46.8689201Z",
+  "Updated": "2024-05-14T21:28:46.8689201Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=24.4.1.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=24.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

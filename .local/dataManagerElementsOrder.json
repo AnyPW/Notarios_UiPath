@@ -1,0 +1,29 @@
+{
+  "Workflows": [
+    {
+      "Path": null,
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": null,
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Main.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "tablaNotarios&Sequence_4",
+        "notariosSinCorreo&Sequence_4",
+        "índice&Sequence_4",
+        "ExisteNotario&SequenceX_1",
+        "correoTemp&Sequence_8",
+        "apellidos&Sequence_8"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "GEN_CorreoCorporativoNot"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    }
+  ]
+}

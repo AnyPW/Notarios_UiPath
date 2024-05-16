@@ -1,0 +1,12 @@
+﻿{
+  "Name": "Edge ntp.msn.comedgentplocale=en-GB&title=New",
+  "Type": "App",
+  "Id": "00Xxf2WYDkupWzl2P0Vjrw",
+  "Reference": "pyrFxN0gFESAa0tjtCFSNA/00Xxf2WYDkupWzl2P0Vjrw",
+  "Created": "2024-05-14T21:28:46.8039302Z",
+  "Updated": "2024-05-14T21:28:46.8039302Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=24.4.1.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=24.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

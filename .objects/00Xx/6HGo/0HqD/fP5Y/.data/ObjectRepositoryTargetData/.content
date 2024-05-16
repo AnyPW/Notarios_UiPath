@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="FG17wFHk9UeVWfkjQ1Wvqw" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="https://www.notariado.org/portal/" CVScreenId="e3452034-e7e7-41f5-a378-d059b3662d01" CvElementArea="696, 554, 433, 54" CvType="InputBox" DesignTimeRectangle="699, 615, 430, 50" DesignTimeScaleFactor="1.25" ElementType="InputBox" FullSelectorArgument="&lt;webctrl id='valor1' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='valor1' tag='INPUT' type='text' class='submit_on_enter form-control border-0 rounded-0' placeholder='Nombre' aaname='' /&gt;" Guid="1e536b4d-c0e1-4910-a99c-8efb2ccc0ca4" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Inicio - Notariado' /&gt;" SearchSteps="FuzzySelector, CV" Version="V3" Visibility="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="c4329b880cc371c7a434e6756be4acb6.png" xmlns="">0J9pzo4Cf7UiBAP5L-RNxkA</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">TypeInto</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>
