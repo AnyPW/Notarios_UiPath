@@ -54,6 +54,9 @@
       <x:String>UiPath.UIAutomationNext.Contracts</x:String>
       <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
       <x:String>System.Security</x:String>
+      <x:String>UiPath.Mail</x:String>
+      <x:String>UiPath.Mail.Outlook.Activities</x:String>
+      <x:String>UiPath.Mail.Activities</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -121,6 +124,8 @@
       <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities.Design</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
   <Sequence DisplayName="Secuencia" sap:VirtualizedContainerService.HintSize="1038.4,4913.6" sap2010:WorkflowViewState.IdRef="Sequence_4">
@@ -216,7 +221,7 @@
                     <ActivityAction.Argument>
                       <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
                     </ActivityAction.Argument>
-                    <Sequence DisplayName="Hacer" sap:VirtualizedContainerService.HintSize="784,3418.4" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                    <Sequence DisplayName="Hacer" sap:VirtualizedContainerService.HintSize="784,3598.4" sap2010:WorkflowViewState.IdRef="Sequence_8">
                       <Sequence.Variables>
                         <Variable x:TypeArguments="x:String" Name="correoTemp" />
                         <Variable x:TypeArguments="x:String" Name="apellidos" />
@@ -226,7 +231,7 @@
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="721.6,113.6" sap2010:WorkflowViewState.IdRef="Assign_1">
+                      <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="721.6,112.8" sap2010:WorkflowViewState.IdRef="Assign_1">
                         <Assign.To>
                           <OutArgument x:TypeArguments="x:String">[apellidos]</OutArgument>
                         </Assign.To>
@@ -336,7 +341,7 @@
                           </Sequence>
                         </TryCatch.Finally>
                       </TryCatch>
-                      <If Condition="[ExisteNotario = &quot;no&quot;]" DisplayName="Si" sap:VirtualizedContainerService.HintSize="721.6,2165.6" sap2010:WorkflowViewState.IdRef="If_2">
+                      <If Condition="[ExisteNotario = &quot;no&quot;]" DisplayName="Si" sap:VirtualizedContainerService.HintSize="721.6,2174.4" sap2010:WorkflowViewState.IdRef="If_2">
                         <If.Then>
                           <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,421.6" sap2010:WorkflowViewState.IdRef="Sequence_10">
                             <sap:WorkflowViewStateService.ViewState>
@@ -378,7 +383,7 @@
                                 </uix:VerifyExecutionOptions>
                               </uix:NClick.VerifyOptions>
                             </uix:NClick>
-                            <uix:NGetAttributeGeneric x:TypeArguments="x:String" Attribute="&lt;a&gt;" DisplayName="Obtener atributo 'email'" sap:VirtualizedContainerService.HintSize="625.6,240" sap2010:WorkflowViewState.IdRef="NGetAttributeGeneric`1_1" Result="[correoTemp]" ScopeIdentifier="f292e4e5-35c6-4ad6-9b3b-78b6156d4002" Version="V3">
+                            <uix:NGetAttributeGeneric x:TypeArguments="x:String" Attribute="text" DisplayName="Obtener atributo 'email'" sap:VirtualizedContainerService.HintSize="625.6,240" sap2010:WorkflowViewState.IdRef="NGetAttributeGeneric`1_2" Result="[correoTemp]" ScopeIdentifier="f292e4e5-35c6-4ad6-9b3b-78b6156d4002" Version="V3">
                               <uix:NGetAttributeGeneric.Target>
                                 <uix:TargetAnchorable BrowserURL="https://www.notariado.org/portal/Elige%20a%20tu%20notario%20orden?Nombre=JUAN%20IGNACIO&amp;Apellidos=GOMEZA%20VILLA&amp;CodigoPostal=&amp;Poblacion=&amp;Idioma=" DesignTimeRectangle="497, 786, 224, 25" DesignTimeScaleFactor="1.25" ElementType="Text" FullSelectorArgument="&lt;webctrl parentid='collapseP0' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='collapseP0' tag='A' type='' class='' aaname='jigomeza@correonotarial.org' check:innerText='jigomeza@correonotarial.org' /&gt;" Guid="0fc2a1f1-5d67-443f-9d4e-582b9a25b117" InformativeScreenshot="335a482add06ae17aa7cad9790c49216.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Elige a tu notario - Notariado' /&gt;" SearchSteps="FuzzySelector" Version="V3" Visibility="Interactive" />
                               </uix:NGetAttributeGeneric.Target>
@@ -424,6 +429,11 @@
                           </Sequence>
                         </If.Else>
                       </If>
+                      <ui:SendOutlookMail Account="{x:Null}" Bcc="{x:Null}" Cc="{x:Null}" ContinueOnError="{x:Null}" MailMessage="{x:Null}" ReplyTo="{x:Null}" TimeoutMS="{x:Null}" Body="[GEN_CorreoCorporativoNot.ToString]" DisplayName="Send Outlook Mail Message" sap:VirtualizedContainerService.HintSize="721.6,172" sap2010:WorkflowViewState.IdRef="SendOutlookMail_1" Importance="Normal" IsBodyHtml="False" IsDraft="False" Sensitivity="Normal" Subject="Notarios que no estan en el sistema" To="anileyrivero@gmail.com">
+                        <ui:SendOutlookMail.Files>
+                          <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
+                        </ui:SendOutlookMail.Files>
+                      </ui:SendOutlookMail>
                     </Sequence>
                   </ActivityAction>
                 </uix:NApplicationCard.Body>
