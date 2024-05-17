@@ -12,9 +12,11 @@
       "Path": "Main.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
+        "indice2&Sequence_11",
+        "indice&Sequence_4",
+        "notariosArray&Sequence_4",
         "tablaNotarios&Sequence_4",
         "notariosSinCorreo&Sequence_4",
-        "índice&Sequence_4",
         "ExisteNotario&SequenceX_1",
         "correoTemp&Sequence_8",
         "apellidos&Sequence_8"

@@ -1,11 +1,11 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:sc="clr-namespace:System.Collections;assembly=System.Collections.NonGeneric" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ue="clr-namespace:UiPath.Excel;assembly=UiPath.Excel.Activities" xmlns:ueab="clr-namespace:UiPath.Excel.Activities.Business;assembly=UiPath.Excel.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:sc="clr-namespace:System.Collections;assembly=System.Collections.NonGeneric" xmlns:sc1="clr-namespace:System.ComponentModel;assembly=System.ComponentModel.TypeConverter" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ue="clr-namespace:UiPath.Excel;assembly=UiPath.Excel.Activities" xmlns:ueab="clr-namespace:UiPath.Excel.Activities.Business;assembly=UiPath.Excel.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="GEN_CorreoCorporativoNot" Type="InArgument(sc:Queue)" />
   </x:Members>
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1028,4978.4</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1124,4923.2</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -57,6 +57,8 @@
       <x:String>UiPath.Mail</x:String>
       <x:String>UiPath.Mail.Outlook.Activities</x:String>
       <x:String>UiPath.Mail.Activities</x:String>
+      <x:String>UiPath.Core.Activities.Orchestrator</x:String>
+      <x:String>System.Numerics</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -126,19 +128,18 @@
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
       <AssemblyReference>UiPath.Mail</AssemblyReference>
       <AssemblyReference>UiPath.Mail.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Secuencia" sap:VirtualizedContainerService.HintSize="1038.4,4913.6" sap2010:WorkflowViewState.IdRef="Sequence_4">
+  <Sequence DisplayName="Secuencia" sap:VirtualizedContainerService.HintSize="1134.4,4858.4" sap2010:WorkflowViewState.IdRef="Sequence_4">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="tablaNotarios" />
       <Variable x:TypeArguments="sd:DataTable" Name="notariosSinCorreo" />
-      <Variable x:TypeArguments="x:Int32" Name="índice">
-        <sap:WorkflowViewStateService.ViewState>
-          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-            <x:String x:Key="SourceIdRef">ForEachRow_1</x:String>
-            <x:String x:Key="SourcePropertyName">CurrentIndex</x:String>
-          </scg:Dictionary>
-        </sap:WorkflowViewStateService.ViewState>
+      <Variable x:TypeArguments="sd:DataTable" Name="notariosArray" />
+      <Variable x:TypeArguments="x:Int32" Name="indice">
+        <Variable.Default>
+          <Literal x:TypeArguments="x:Int32" />
+        </Variable.Default>
       </Variable>
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
@@ -146,7 +147,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ueab:SequenceX DisplayName="Ámbito del proceso de Excel único" sap:VirtualizedContainerService.HintSize="976,4824.8" sap2010:WorkflowViewState.IdRef="SequenceX_1">
+    <ueab:SequenceX DisplayName="Ámbito del proceso de Excel único" sap:VirtualizedContainerService.HintSize="1072,4769.6" sap2010:WorkflowViewState.IdRef="SequenceX_1">
       <ueab:SequenceX.Variables>
         <Variable x:TypeArguments="x:String" Name="ExisteNotario" />
       </ueab:SequenceX.Variables>
@@ -155,20 +156,20 @@
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ueab:ExcelApplicationCard Password="{x:Null}" ReadFormatting="{x:Null}" DisplayName="Utilice el archivo de Excel" sap:VirtualizedContainerService.HintSize="913.6,775.2" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_1" ResizeWindow="None" WorkbookPath="NOTARIOS_CUBA.xlsx">
+      <ueab:ExcelApplicationCard Password="{x:Null}" DisplayName="Utilice el archivo de Excel" sap:VirtualizedContainerService.HintSize="1009.6,4657.6" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_1" ReadFormatting="Default" ResizeWindow="None" WorkbookPath="NOTARIOS_CUBA.xlsx">
         <ueab:ExcelApplicationCard.Body>
           <ActivityAction x:TypeArguments="ue:IWorkbookQuickHandle">
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="ue:IWorkbookQuickHandle" Name="notariosExcel" />
             </ActivityAction.Argument>
-            <Sequence DisplayName="Hacer" sap:VirtualizedContainerService.HintSize="505.6,473.6" sap2010:WorkflowViewState.IdRef="Sequence_6">
+            <Sequence DisplayName="Hacer" sap:VirtualizedContainerService.HintSize="976,4364.8" sap2010:WorkflowViewState.IdRef="Sequence_6">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ueab:ReadRangeX DisplayName="Leer rango" sap:VirtualizedContainerService.HintSize="443.2,201.6" sap2010:WorkflowViewState.IdRef="ReadRangeX_1" Range="[notariosExcel.Sheet(&quot;NOTARIOS_CUBA&quot;).Range(&quot;NOTARIOS_CUBA&quot;)]" SaveTo="[tablaNotarios]" />
-              <ui:FilterDataTable DataTable="[tablaNotarios]" DisplayName="Filtrar tabla de datos" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="443.2,185.6" sap2010:WorkflowViewState.IdRef="FilterDataTable_3" OutputDataTable="[notariosSinCorreo]" SelectColumnsMode="Remove">
+              <ueab:ReadRangeX DisplayName="Leer rango" sap:VirtualizedContainerService.HintSize="913.6,201.6" sap2010:WorkflowViewState.IdRef="ReadRangeX_1" Range="[notariosExcel.Sheet(&quot;NOTARIOS_CUBA&quot;).Range(&quot;NOTARIOS_CUBA&quot;)]" SaveTo="[tablaNotarios]" />
+              <ui:FilterDataTable DataTable="[tablaNotarios]" DisplayName="Filtrar tabla de datos" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="913.6,194.4" sap2010:WorkflowViewState.IdRef="FilterDataTable_3" OutputDataTable="[notariosSinCorreo]" SelectColumnsMode="Remove">
                 <ui:FilterDataTable.Filters>
                   <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
                     <ui:FilterOperationArgument Operand="{x:Null}" BooleanOperator="And" Operator="NOTEMPTY">
@@ -199,252 +200,285 @@
                   </scg:List>
                 </ui:FilterDataTable.SelectColumns>
               </ui:FilterDataTable>
-            </Sequence>
-          </ActivityAction>
-        </ueab:ExcelApplicationCard.Body>
-      </ueab:ExcelApplicationCard>
-      <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="[índice]" DataTable="[notariosSinCorreo]" DisplayName="Para cada fila de la tabla de datos" sap:VirtualizedContainerService.HintSize="913.6,3937.6" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
-        <ui:ForEachRow.Body>
-          <ActivityAction x:TypeArguments="sd:DataRow">
-            <ActivityAction.Argument>
-              <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
-            </ActivityAction.Argument>
-            <Sequence DisplayName="Cuerpo" sap:VirtualizedContainerService.HintSize="880,3748.8" sap2010:WorkflowViewState.IdRef="Sequence_7">
-              <sap:WorkflowViewStateService.ViewState>
-                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                </scg:Dictionary>
-              </sap:WorkflowViewStateService.ViewState>
-              <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Edge ntp.msn.comedgentplocale=en-GB&amp;title=New" sap:VirtualizedContainerService.HintSize="817.6,3662.4" sap2010:WorkflowViewState.IdRef="NApplicationCard_3" InteractionMode="DebuggerApi" ScopeGuid="f292e4e5-35c6-4ad6-9b3b-78b6156d4002" Version="V2">
-                <uix:NApplicationCard.Body>
-                  <ActivityAction x:TypeArguments="x:Object">
+              <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="[indice]" DataTable="[notariosSinCorreo]" DisplayName="Para cada fila de la tabla de datos" sap:VirtualizedContainerService.HintSize="913.6,3882.4" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+                <ui:ForEachRow.Body>
+                  <ActivityAction x:TypeArguments="sd:DataRow">
                     <ActivityAction.Argument>
-                      <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                      <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
                     </ActivityAction.Argument>
-                    <Sequence DisplayName="Hacer" sap:VirtualizedContainerService.HintSize="784,3598.4" sap2010:WorkflowViewState.IdRef="Sequence_8">
-                      <Sequence.Variables>
-                        <Variable x:TypeArguments="x:String" Name="correoTemp" />
-                        <Variable x:TypeArguments="x:String" Name="apellidos" />
-                      </Sequence.Variables>
+                    <Sequence DisplayName="Cuerpo" sap:VirtualizedContainerService.HintSize="880,3693.6" sap2010:WorkflowViewState.IdRef="Sequence_7">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="721.6,112.8" sap2010:WorkflowViewState.IdRef="Assign_1">
-                        <Assign.To>
-                          <OutArgument x:TypeArguments="x:String">[apellidos]</OutArgument>
-                        </Assign.To>
-                        <Assign.Value>
-                          <InArgument x:TypeArguments="x:String">[CurrentRow("Apellido1").ToString + " " + CurrentRow("Apellido2").ToString]</InArgument>
-                        </Assign.Value>
-                      </Assign>
-                      <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Escribir en 'INPUT valor1'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="721.6,286.4" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="f292e4e5-35c6-4ad6-9b3b-78b6156d4002" Text="[CurrentRow(&quot;Nombre&quot;).ToString]" Version="V3">
-                        <uix:NTypeInto.Target>
-                          <uix:TargetAnchorable BrowserURL="https://www.notariado.org/portal/" CVScreenId="e3452034-e7e7-41f5-a378-d059b3662d01" CvElementArea="696, 554, 433, 54" CvType="InputBox" DesignTimeRectangle="699, 615, 430, 50" DesignTimeScaleFactor="1.25" ElementType="InputBox" FullSelectorArgument="&lt;webctrl id='valor1' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='valor1' tag='INPUT' type='text' class='submit_on_enter form-control border-0 rounded-0' placeholder='Nombre' aaname='' /&gt;" Guid="1e536b4d-c0e1-4910-a99c-8efb2ccc0ca4" InformativeScreenshot="c4329b880cc371c7a434e6756be4acb6.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Inicio - Notariado' /&gt;" SearchSteps="FuzzySelector, CV" Version="V3" Visibility="Interactive" />
-                        </uix:NTypeInto.Target>
-                        <uix:NTypeInto.VerifyOptions>
-                          <uix:VerifyExecutionTypeIntoOptions DisplayName="{x:Null}" Mode="Appears">
-                            <uix:VerifyExecutionTypeIntoOptions.Retry>
-                              <InArgument x:TypeArguments="x:Boolean" />
-                            </uix:VerifyExecutionTypeIntoOptions.Retry>
-                            <uix:VerifyExecutionTypeIntoOptions.Timeout>
-                              <InArgument x:TypeArguments="x:Double" />
-                            </uix:VerifyExecutionTypeIntoOptions.Timeout>
-                          </uix:VerifyExecutionTypeIntoOptions>
-                        </uix:NTypeInto.VerifyOptions>
-                      </uix:NTypeInto>
-                      <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Escribir en 'INPUT valor2'" EmptyFieldMode="MultiLine" sap:VirtualizedContainerService.HintSize="721.6,286.4" sap2010:WorkflowViewState.IdRef="NTypeInto_3" ScopeIdentifier="f292e4e5-35c6-4ad6-9b3b-78b6156d4002" Text="[apellidos]" Version="V3">
-                        <uix:NTypeInto.Target>
-                          <uix:TargetAnchorable BrowserURL="https://www.notariado.org/portal/" CVScreenId="9199d36a-126d-4f1d-907d-661804f6722b" CvElementArea="696, 516, 435, 54" CvType="InputBox" DesignTimeRectangle="699, 519, 430, 50" DesignTimeScaleFactor="1.25" ElementType="InputBox" FullSelectorArgument="&lt;webctrl id='valor2' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='valor2' tag='INPUT' type='text' class='submit_on_enter form-control border-0 rounded-0' placeholder='Apellidos' aaname='' /&gt;" Guid="2ac22cdf-fd73-4260-9105-fe4bca5df8cc" InformativeScreenshot="efb1988e9b308ed19407abe2d0678ec6.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Inicio - Notariado' /&gt;" SearchSteps="FuzzySelector, CV" Version="V3" Visibility="Interactive" />
-                        </uix:NTypeInto.Target>
-                        <uix:NTypeInto.VerifyOptions>
-                          <uix:VerifyExecutionTypeIntoOptions DisplayName="{x:Null}" Mode="Appears">
-                            <uix:VerifyExecutionTypeIntoOptions.Retry>
-                              <InArgument x:TypeArguments="x:Boolean" />
-                            </uix:VerifyExecutionTypeIntoOptions.Retry>
-                            <uix:VerifyExecutionTypeIntoOptions.Timeout>
-                              <InArgument x:TypeArguments="x:Double" />
-                            </uix:VerifyExecutionTypeIntoOptions.Timeout>
-                          </uix:VerifyExecutionTypeIntoOptions>
-                        </uix:NTypeInto.VerifyOptions>
-                      </uix:NTypeInto>
-                      <TryCatch DisplayName="Intentar capturar" sap:VirtualizedContainerService.HintSize="721.6,480" sap2010:WorkflowViewState.IdRef="TryCatch_1">
-                        <TryCatch.Try>
-                          <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Clic 'Acude a tu Notario'" sap:VirtualizedContainerService.HintSize="333.6,193.6" sap2010:WorkflowViewState.IdRef="NClick_4" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="f292e4e5-35c6-4ad6-9b3b-78b6156d4002" Version="V3">
-                            <uix:NClick.Target>
-                              <uix:TargetAnchorable BrowserURL="https://www.notariado.org/portal/" CVScreenId="54150327-3416-49e3-be53-09c684d2382b" CvElementArea="696, 596, 143, 54" CvTextArea="716, 611, 102, 22" CvTextArgument="BUSCAR &gt;" CvType="Button" DesignTimeRectangle="699, 600, 139, 48" DesignTimeScaleFactor="1.25" ElementType="Button" FullSelectorArgument="&lt;webctrl tag='BUTTON' /&gt;" FuzzyAccuracy="0.99" FuzzySelectorArgument="&lt;webctrl tag='BUTTON' type='' class='btn btn-primary' aaname='Buscar' check:innerText='BUSCAR' /&gt;" Guid="3d98b1fc-a2eb-4833-b18b-2354a0133ebc" InformativeScreenshot="571ba8b6f628336d45ec985654cad9e5.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Inicio - Notariado' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V3" Visibility="Interactive" />
-                            </uix:NClick.Target>
-                            <uix:NClick.VerifyOptions>
-                              <uix:VerifyExecutionOptions DisplayName="Destino de verificación" Mode="Appears">
-                                <uix:VerifyExecutionOptions.Retry>
-                                  <InArgument x:TypeArguments="x:Boolean" />
-                                </uix:VerifyExecutionOptions.Retry>
-                                <uix:VerifyExecutionOptions.Timeout>
-                                  <InArgument x:TypeArguments="x:Double" />
-                                </uix:VerifyExecutionOptions.Timeout>
-                              </uix:VerifyExecutionOptions>
-                            </uix:NClick.VerifyOptions>
-                          </uix:NClick>
-                        </TryCatch.Try>
-                        <TryCatch.Catches>
-                          <Catch x:TypeArguments="s:NullReferenceException" sap:VirtualizedContainerService.HintSize="403.2,23.2" sap2010:WorkflowViewState.IdRef="Catch`1_1">
-                            <sap:WorkflowViewStateService.ViewState>
-                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                              </scg:Dictionary>
-                            </sap:WorkflowViewStateService.ViewState>
-                            <ActivityAction x:TypeArguments="s:NullReferenceException">
-                              <ActivityAction.Argument>
-                                <DelegateInArgument x:TypeArguments="s:NullReferenceException" Name="exception" />
-                              </ActivityAction.Argument>
-                              <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="433.6,80.8" sap2010:WorkflowViewState.IdRef="Assign_4">
+                      <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Edge ntp.msn.comedgentplocale=en-GB&amp;title=New" sap:VirtualizedContainerService.HintSize="817.6,3607.2" sap2010:WorkflowViewState.IdRef="NApplicationCard_3" InteractionMode="DebuggerApi" ScopeGuid="f292e4e5-35c6-4ad6-9b3b-78b6156d4002" Version="V2">
+                        <uix:NApplicationCard.Body>
+                          <ActivityAction x:TypeArguments="x:Object">
+                            <ActivityAction.Argument>
+                              <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                            </ActivityAction.Argument>
+                            <Sequence DisplayName="Hacer" sap:VirtualizedContainerService.HintSize="784,3367.2" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                              <Sequence.Variables>
+                                <Variable x:TypeArguments="x:String" Name="correoTemp" />
+                                <Variable x:TypeArguments="x:String" Name="apellidos" />
+                              </Sequence.Variables>
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="721.6,114.4" sap2010:WorkflowViewState.IdRef="Assign_1">
                                 <Assign.To>
-                                  <OutArgument x:TypeArguments="x:String">[ExisteNotario]</OutArgument>
+                                  <OutArgument x:TypeArguments="x:String">[apellidos]</OutArgument>
                                 </Assign.To>
                                 <Assign.Value>
-                                  <InArgument x:TypeArguments="x:String">no</InArgument>
+                                  <InArgument x:TypeArguments="x:String">[CurrentRow("Apellido1").ToString + " " + CurrentRow("Apellido2").ToString]</InArgument>
                                 </Assign.Value>
                               </Assign>
-                            </ActivityAction>
-                          </Catch>
-                          <Catch x:TypeArguments="ui:BusinessRuleException" sap:VirtualizedContainerService.HintSize="403.2,23.2" sap2010:WorkflowViewState.IdRef="Catch`1_2">
-                            <sap:WorkflowViewStateService.ViewState>
-                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                              </scg:Dictionary>
-                            </sap:WorkflowViewStateService.ViewState>
-                            <ActivityAction x:TypeArguments="ui:BusinessRuleException">
-                              <ActivityAction.Argument>
-                                <DelegateInArgument x:TypeArguments="ui:BusinessRuleException" Name="exception" />
-                              </ActivityAction.Argument>
-                            </ActivityAction>
-                          </Catch>
-                        </TryCatch.Catches>
-                        <TryCatch.Finally>
-                          <Sequence DisplayName="Secuencia" sap:VirtualizedContainerService.HintSize="496,195.2" sap2010:WorkflowViewState.IdRef="Sequence_9">
-                            <sap:WorkflowViewStateService.ViewState>
-                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                              </scg:Dictionary>
-                            </sap:WorkflowViewStateService.ViewState>
-                            <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="433.6,107.2" sap2010:WorkflowViewState.IdRef="Assign_2">
-                              <Assign.To>
-                                <OutArgument x:TypeArguments="x:String">[ExisteNotario]</OutArgument>
-                              </Assign.To>
-                              <Assign.Value>
-                                <InArgument x:TypeArguments="x:String">si</InArgument>
-                              </Assign.Value>
-                            </Assign>
-                          </Sequence>
-                        </TryCatch.Finally>
-                      </TryCatch>
-                      <If Condition="[ExisteNotario = &quot;no&quot;]" DisplayName="Si" sap:VirtualizedContainerService.HintSize="721.6,2174.4" sap2010:WorkflowViewState.IdRef="If_2">
-                        <If.Then>
-                          <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,421.6" sap2010:WorkflowViewState.IdRef="Sequence_10">
-                            <sap:WorkflowViewStateService.ViewState>
-                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                              </scg:Dictionary>
-                            </sap:WorkflowViewStateService.ViewState>
-                            <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Bandeja de mensajes" sap:VirtualizedContainerService.HintSize="353.6,117.6" sap2010:WorkflowViewState.IdRef="MessageBox_4" Text="[&quot;El notario &quot; + CurrentRow(&quot;Nombre&quot;).ToString + &quot; no esta en el sistema&quot;]" />
-                            <ui:AddQueueItem ServiceBaseAddress="{x:Null}" TimeoutMS="{x:Null}" DisplayName="Add Queue Item" sap:VirtualizedContainerService.HintSize="353.6,217.6" sap2010:WorkflowViewState.IdRef="AddQueueItem_1" Priority="Normal" QueueType="GEN_CorreoCorporativoNot">
-                              <ui:AddQueueItem.ItemInformation>
-                                <InArgument x:TypeArguments="x:String" x:Key="CodNotario">[CurrentRow("CodNotario").ToString]</InArgument>
-                                <InArgument x:TypeArguments="x:String" x:Key="NIF">[CurrentRow("NIF").ToString]</InArgument>
-                                <InArgument x:TypeArguments="x:String" x:Key="Nombre">[CurrentRow("Nombre").ToString]</InArgument>
-                                <InArgument x:TypeArguments="x:String" x:Key="Apellido1">[CurrentRow("Apellido1").ToString]</InArgument>
-                                <InArgument x:TypeArguments="x:String" x:Key="Apellido2">[CurrentRow("Apellido2").ToString]</InArgument>
-                              </ui:AddQueueItem.ItemInformation>
-                            </ui:AddQueueItem>
-                          </Sequence>
-                        </If.Then>
-                        <If.Else>
-                          <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="688,1582.4" sap2010:WorkflowViewState.IdRef="Sequence_11">
-                            <sap:WorkflowViewStateService.ViewState>
-                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                              </scg:Dictionary>
-                            </sap:WorkflowViewStateService.ViewState>
-                            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Juan Ignacio'" sap:VirtualizedContainerService.HintSize="625.6,225.6" sap2010:WorkflowViewState.IdRef="NClick_5" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="f292e4e5-35c6-4ad6-9b3b-78b6156d4002" Version="V3">
-                              <uix:NClick.Target>
-                                <uix:TargetAnchorable BrowserURL="https://www.notariado.org/portal/Elige%20a%20tu%20notario%20orden?Nombre=JUAN%20IGNACIO&amp;Apellidos=GOMEZA%20VILLA&amp;CodigoPostal=&amp;Poblacion=&amp;Idioma=" CVScreenId="f4268382-18a7-4dfa-8acd-d6d24f1747d0" CvTextArea="201, 606, 245, 20" CvTextArgument="+ Juan Ignacio Gomeza Villa" CvType="Text" DesignTimeRectangle="205, 603, 242, 25" DesignTimeScaleFactor="1.25" ElementType="Text" FullSelectorArgument="&lt;webctrl parentid='heading0' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='heading0' tag='SPAN' type='' class='btn-title' aaname=' Juan Ignacio Gomeza Villa ' check:innerText='Juan Ignacio Gomeza Villa' /&gt;" Guid="a49411e5-eac5-4836-9307-7d9b1d027b2b" InformativeScreenshot="d0e1111a26ee95e90628808676f93dba.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Elige a tu notario - Notariado' /&gt;" SearchSteps="FuzzySelector, CV" Version="V3" Visibility="Interactive" />
-                              </uix:NClick.Target>
-                              <uix:NClick.VerifyOptions>
-                                <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
-                                  <uix:VerifyExecutionOptions.Retry>
-                                    <InArgument x:TypeArguments="x:Boolean" />
-                                  </uix:VerifyExecutionOptions.Retry>
-                                  <uix:VerifyExecutionOptions.Timeout>
-                                    <InArgument x:TypeArguments="x:Double" />
-                                  </uix:VerifyExecutionOptions.Timeout>
-                                </uix:VerifyExecutionOptions>
-                              </uix:NClick.VerifyOptions>
-                            </uix:NClick>
-                            <uix:NGetAttributeGeneric x:TypeArguments="x:String" Attribute="text" DisplayName="Obtener atributo 'email'" sap:VirtualizedContainerService.HintSize="625.6,240" sap2010:WorkflowViewState.IdRef="NGetAttributeGeneric`1_2" Result="[correoTemp]" ScopeIdentifier="f292e4e5-35c6-4ad6-9b3b-78b6156d4002" Version="V3">
-                              <uix:NGetAttributeGeneric.Target>
-                                <uix:TargetAnchorable BrowserURL="https://www.notariado.org/portal/Elige%20a%20tu%20notario%20orden?Nombre=JUAN%20IGNACIO&amp;Apellidos=GOMEZA%20VILLA&amp;CodigoPostal=&amp;Poblacion=&amp;Idioma=" DesignTimeRectangle="497, 786, 224, 25" DesignTimeScaleFactor="1.25" ElementType="Text" FullSelectorArgument="&lt;webctrl parentid='collapseP0' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='collapseP0' tag='A' type='' class='' aaname='jigomeza@correonotarial.org' check:innerText='jigomeza@correonotarial.org' /&gt;" Guid="0fc2a1f1-5d67-443f-9d4e-582b9a25b117" InformativeScreenshot="335a482add06ae17aa7cad9790c49216.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Elige a tu notario - Notariado' /&gt;" SearchSteps="FuzzySelector" Version="V3" Visibility="Interactive" />
-                              </uix:NGetAttributeGeneric.Target>
-                            </uix:NGetAttributeGeneric>
-                            <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="625.6,117.6" sap2010:WorkflowViewState.IdRef="MessageBox_5" Text="[correoTemp.ToString]" />
-                            <ueab:ExcelApplicationCard Password="{x:Null}" ReadFormatting="{x:Null}" DisplayName="Utilice el archivo de Excel" sap:VirtualizedContainerService.HintSize="625.6,912.8" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_2" ResizeWindow="None" WorkbookPath="NOTARIOS_CUBA.xlsx">
-                              <ueab:ExcelApplicationCard.Body>
-                                <ActivityAction x:TypeArguments="ue:IWorkbookQuickHandle">
-                                  <ActivityAction.Argument>
-                                    <DelegateInArgument x:TypeArguments="ue:IWorkbookQuickHandle" Name="Excel" />
-                                  </ActivityAction.Argument>
-                                  <Sequence DisplayName="Hacer" sap:VirtualizedContainerService.HintSize="592,620" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Escribir en 'INPUT valor1'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="721.6,286.4" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="f292e4e5-35c6-4ad6-9b3b-78b6156d4002" Text="[CurrentRow(&quot;Nombre&quot;).ToString]" Version="V3">
+                                <uix:NTypeInto.Target>
+                                  <uix:TargetAnchorable BrowserURL="https://www.notariado.org/portal/" CVScreenId="e3452034-e7e7-41f5-a378-d059b3662d01" CvElementArea="696, 554, 433, 54" CvType="InputBox" DesignTimeRectangle="699, 615, 430, 50" DesignTimeScaleFactor="1.25" ElementType="InputBox" FullSelectorArgument="&lt;webctrl id='valor1' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='valor1' tag='INPUT' type='text' class='submit_on_enter form-control border-0 rounded-0' placeholder='Nombre' aaname='' /&gt;" Guid="1e536b4d-c0e1-4910-a99c-8efb2ccc0ca4" InformativeScreenshot="c4329b880cc371c7a434e6756be4acb6.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Inicio - Notariado' /&gt;" SearchSteps="FuzzySelector, CV" Version="V3" Visibility="Interactive" />
+                                </uix:NTypeInto.Target>
+                                <uix:NTypeInto.VerifyOptions>
+                                  <uix:VerifyExecutionTypeIntoOptions DisplayName="{x:Null}" Mode="Appears">
+                                    <uix:VerifyExecutionTypeIntoOptions.Retry>
+                                      <InArgument x:TypeArguments="x:Boolean" />
+                                    </uix:VerifyExecutionTypeIntoOptions.Retry>
+                                    <uix:VerifyExecutionTypeIntoOptions.Timeout>
+                                      <InArgument x:TypeArguments="x:Double" />
+                                    </uix:VerifyExecutionTypeIntoOptions.Timeout>
+                                  </uix:VerifyExecutionTypeIntoOptions>
+                                </uix:NTypeInto.VerifyOptions>
+                              </uix:NTypeInto>
+                              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Escribir en 'INPUT valor2'" EmptyFieldMode="MultiLine" sap:VirtualizedContainerService.HintSize="721.6,286.4" sap2010:WorkflowViewState.IdRef="NTypeInto_3" ScopeIdentifier="f292e4e5-35c6-4ad6-9b3b-78b6156d4002" Text="[apellidos]" Version="V3">
+                                <uix:NTypeInto.Target>
+                                  <uix:TargetAnchorable BrowserURL="https://www.notariado.org/portal/" CVScreenId="9199d36a-126d-4f1d-907d-661804f6722b" CvElementArea="696, 516, 435, 54" CvType="InputBox" DesignTimeRectangle="699, 519, 430, 50" DesignTimeScaleFactor="1.25" ElementType="InputBox" FullSelectorArgument="&lt;webctrl id='valor2' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='valor2' tag='INPUT' type='text' class='submit_on_enter form-control border-0 rounded-0' placeholder='Apellidos' aaname='' /&gt;" Guid="2ac22cdf-fd73-4260-9105-fe4bca5df8cc" InformativeScreenshot="efb1988e9b308ed19407abe2d0678ec6.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Inicio - Notariado' /&gt;" SearchSteps="FuzzySelector, CV" Version="V3" Visibility="Interactive" />
+                                </uix:NTypeInto.Target>
+                                <uix:NTypeInto.VerifyOptions>
+                                  <uix:VerifyExecutionTypeIntoOptions DisplayName="{x:Null}" Mode="Appears">
+                                    <uix:VerifyExecutionTypeIntoOptions.Retry>
+                                      <InArgument x:TypeArguments="x:Boolean" />
+                                    </uix:VerifyExecutionTypeIntoOptions.Retry>
+                                    <uix:VerifyExecutionTypeIntoOptions.Timeout>
+                                      <InArgument x:TypeArguments="x:Double" />
+                                    </uix:VerifyExecutionTypeIntoOptions.Timeout>
+                                  </uix:VerifyExecutionTypeIntoOptions>
+                                </uix:NTypeInto.VerifyOptions>
+                              </uix:NTypeInto>
+                              <TryCatch DisplayName="Intentar capturar" sap:VirtualizedContainerService.HintSize="721.6,480" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+                                <TryCatch.Try>
+                                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Clic 'Acude a tu Notario'" sap:VirtualizedContainerService.HintSize="333.6,193.6" sap2010:WorkflowViewState.IdRef="NClick_4" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="f292e4e5-35c6-4ad6-9b3b-78b6156d4002" Version="V3">
+                                    <uix:NClick.Target>
+                                      <uix:TargetAnchorable BrowserURL="https://www.notariado.org/portal/" CVScreenId="54150327-3416-49e3-be53-09c684d2382b" CvElementArea="696, 596, 143, 54" CvTextArea="716, 611, 102, 22" CvTextArgument="BUSCAR &gt;" CvType="Button" DesignTimeRectangle="699, 600, 139, 48" DesignTimeScaleFactor="1.25" ElementType="Button" FullSelectorArgument="&lt;webctrl tag='BUTTON' /&gt;" FuzzyAccuracy="0.99" FuzzySelectorArgument="&lt;webctrl tag='BUTTON' type='' class='btn btn-primary' aaname='Buscar' check:innerText='BUSCAR' /&gt;" Guid="3d98b1fc-a2eb-4833-b18b-2354a0133ebc" InformativeScreenshot="571ba8b6f628336d45ec985654cad9e5.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Inicio - Notariado' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V3" Visibility="Interactive" />
+                                    </uix:NClick.Target>
+                                    <uix:NClick.VerifyOptions>
+                                      <uix:VerifyExecutionOptions DisplayName="Element 'Juan Ignacio'" Mode="Appears">
+                                        <uix:VerifyExecutionOptions.Retry>
+                                          <InArgument x:TypeArguments="x:Boolean" />
+                                        </uix:VerifyExecutionOptions.Retry>
+                                        <uix:VerifyExecutionOptions.Target>
+                                          <uix:TargetAnchorable BrowserURL="https://www.notariado.org/portal/Elige%20a%20tu%20notario%20orden?Nombre=JUAN%20IGNACIO&amp;Apellidos=GOMEZA%20VILLA&amp;CodigoPostal=&amp;Poblacion=&amp;Idioma=" CVScreenId="ffe45f8a-3b0c-4c71-8954-809f6ad91b1e" CvTextArea="201, 617, 245, 20" CvTextArgument="+ Juan Ignacio Gomeza Villa" CvType="Text" DesignTimeRectangle="170, 585, 1132, 90" DesignTimeScaleFactor="1.25" FullSelectorArgument="&lt;webctrl id='heading0' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl id='heading0' tag='DIV' type='' class='card-header' aaname='                                                                      ' /&gt;" Guid="6eae003e-c27d-4713-a973-795175371b45" InformativeScreenshot="63e4937d70d622c6393bdf54d1c39e3e.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Elige a tu notario - Notariado' /&gt;" SearchSteps="FuzzySelector" Version="V3" Visibility="Interactive" />
+                                        </uix:VerifyExecutionOptions.Target>
+                                        <uix:VerifyExecutionOptions.Timeout>
+                                          <InArgument x:TypeArguments="x:Double" />
+                                        </uix:VerifyExecutionOptions.Timeout>
+                                      </uix:VerifyExecutionOptions>
+                                    </uix:NClick.VerifyOptions>
+                                  </uix:NClick>
+                                </TryCatch.Try>
+                                <TryCatch.Catches>
+                                  <Catch x:TypeArguments="s:NullReferenceException" sap:VirtualizedContainerService.HintSize="403.2,23.2" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <ActivityAction x:TypeArguments="s:NullReferenceException">
+                                      <ActivityAction.Argument>
+                                        <DelegateInArgument x:TypeArguments="s:NullReferenceException" Name="exception" />
+                                      </ActivityAction.Argument>
+                                      <Sequence sap:VirtualizedContainerService.HintSize="496,195.2" sap2010:WorkflowViewState.IdRef="Sequence_16">
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                        <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="433.6,107.2" sap2010:WorkflowViewState.IdRef="Assign_4">
+                                          <Assign.To>
+                                            <OutArgument x:TypeArguments="x:String">[ExisteNotario]</OutArgument>
+                                          </Assign.To>
+                                          <Assign.Value>
+                                            <InArgument x:TypeArguments="x:String">no</InArgument>
+                                          </Assign.Value>
+                                        </Assign>
+                                      </Sequence>
+                                    </ActivityAction>
+                                  </Catch>
+                                  <Catch x:TypeArguments="ui:BusinessRuleException" sap:VirtualizedContainerService.HintSize="403.2,23.2" sap2010:WorkflowViewState.IdRef="Catch`1_2">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <ActivityAction x:TypeArguments="ui:BusinessRuleException">
+                                      <ActivityAction.Argument>
+                                        <DelegateInArgument x:TypeArguments="ui:BusinessRuleException" Name="exception" />
+                                      </ActivityAction.Argument>
+                                      <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="433.6,82.4" sap2010:WorkflowViewState.IdRef="Assign_6">
+                                        <Assign.To>
+                                          <OutArgument x:TypeArguments="x:String">[ExisteNotario]</OutArgument>
+                                        </Assign.To>
+                                        <Assign.Value>
+                                          <InArgument x:TypeArguments="x:String">no</InArgument>
+                                        </Assign.Value>
+                                      </Assign>
+                                    </ActivityAction>
+                                  </Catch>
+                                </TryCatch.Catches>
+                                <TryCatch.Finally>
+                                  <Sequence DisplayName="Secuencia" sap:VirtualizedContainerService.HintSize="496,195.2" sap2010:WorkflowViewState.IdRef="Sequence_9">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
-                                    <If Condition="[CurrentRow(&quot;CodNotario&quot;).ToString = Excel.Sheet(&quot;NOTARIOS_CUBA&quot;).Range(&quot;CodNotario&quot;).AsText()]" DisplayName="Si" sap:VirtualizedContainerService.HintSize="529.6,533.6" sap2010:WorkflowViewState.IdRef="If_3">
-                                      <If.Then>
-                                        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="496,269.6" sap2010:WorkflowViewState.IdRef="Sequence_13">
-                                          <sap:WorkflowViewStateService.ViewState>
-                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                            </scg:Dictionary>
-                                          </sap:WorkflowViewStateService.ViewState>
-                                          <ueab:WriteCellX AutoIncrementRow="True" Cell="[Excel.Sheet(&quot;NOTARIOS_CUBA&quot;).Cell(&quot;CorreoCorporativo&quot;)]" DisplayName="Escribir celda" sap:VirtualizedContainerService.HintSize="433.6,183.2" sap2010:WorkflowViewState.IdRef="WriteCellX_1" Value="[correoTemp]" />
-                                        </Sequence>
-                                      </If.Then>
-                                      <If.Else>
-                                        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,102.4" sap2010:WorkflowViewState.IdRef="Sequence_14">
-                                          <sap:WorkflowViewStateService.ViewState>
-                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                            </scg:Dictionary>
-                                          </sap:WorkflowViewStateService.ViewState>
-                                        </Sequence>
-                                      </If.Else>
-                                    </If>
+                                    <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="433.6,107.2" sap2010:WorkflowViewState.IdRef="Assign_2">
+                                      <Assign.To>
+                                        <OutArgument x:TypeArguments="x:String">[ExisteNotario]</OutArgument>
+                                      </Assign.To>
+                                      <Assign.Value>
+                                        <InArgument x:TypeArguments="x:String">si</InArgument>
+                                      </Assign.Value>
+                                    </Assign>
                                   </Sequence>
-                                </ActivityAction>
-                              </ueab:ExcelApplicationCard.Body>
-                            </ueab:ExcelApplicationCard>
-                          </Sequence>
-                        </If.Else>
-                      </If>
-                      <ui:SendOutlookMail Account="{x:Null}" Bcc="{x:Null}" Cc="{x:Null}" ContinueOnError="{x:Null}" MailMessage="{x:Null}" ReplyTo="{x:Null}" TimeoutMS="{x:Null}" Body="[GEN_CorreoCorporativoNot.ToString]" DisplayName="Send Outlook Mail Message" sap:VirtualizedContainerService.HintSize="721.6,172" sap2010:WorkflowViewState.IdRef="SendOutlookMail_1" Importance="Normal" IsBodyHtml="False" IsDraft="False" Sensitivity="Normal" Subject="Notarios que no estan en el sistema" To="anileyrivero@gmail.com">
-                        <ui:SendOutlookMail.Files>
-                          <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
-                        </ui:SendOutlookMail.Files>
-                      </ui:SendOutlookMail>
+                                </TryCatch.Finally>
+                              </TryCatch>
+                              <If Condition="[ExisteNotario = &quot;no&quot;]" DisplayName="Si" sap:VirtualizedContainerService.HintSize="721.6,2112" sap2010:WorkflowViewState.IdRef="If_2">
+                                <If.Then>
+                                  <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="496,308.8" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Bandeja de mensajes" sap:VirtualizedContainerService.HintSize="433.6,117.6" sap2010:WorkflowViewState.IdRef="MessageBox_4" Text="[&quot;El notario &quot; + CurrentRow(&quot;Nombre&quot;).ToString + &quot; no esta en el sistema&quot;]" />
+                                    <Assign sap:VirtualizedContainerService.HintSize="433.6,104.8" sap2010:WorkflowViewState.IdRef="Assign_5">
+                                      <Assign.To>
+                                        <OutArgument x:TypeArguments="sd:DataTable">[notariosArray]</OutArgument>
+                                      </Assign.To>
+                                      <Assign.Value>
+                                        <InArgument x:TypeArguments="sd:DataTable">[CurrentRow.Table]</InArgument>
+                                      </Assign.Value>
+                                    </Assign>
+                                  </Sequence>
+                                </If.Then>
+                                <If.Else>
+                                  <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="688,1640" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                                    <Sequence.Variables>
+                                      <Variable x:TypeArguments="x:Int32" Default="0" Name="indice2" />
+                                    </Sequence.Variables>
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Juan Ignacio'" sap:VirtualizedContainerService.HintSize="625.6,225.6" sap2010:WorkflowViewState.IdRef="NClick_5" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="f292e4e5-35c6-4ad6-9b3b-78b6156d4002" Version="V3">
+                                      <uix:NClick.Target>
+                                        <uix:TargetAnchorable BrowserURL="https://www.notariado.org/portal/Elige%20a%20tu%20notario%20orden?Nombre=JUAN%20IGNACIO&amp;Apellidos=GOMEZA%20VILLA&amp;CodigoPostal=&amp;Poblacion=&amp;Idioma=" CVScreenId="0d8067a6-36d8-490b-b20b-1ddbfbff18dd" CvTextArea="109, 421, 212, 23" CvTextArgument="a" CvType="Text" DesignTimeRectangle="69, 404, 450, 60" DesignTimeScaleFactor="1.25" FullSelectorArgument="&lt;webctrl parentid='heading0' tag='DIV' /&gt;" FuzzyMatches="10000" FuzzySelectorArgument="&lt;webctrl parentid='heading0' tag='DIV' type='' class='header-bar d-flex' aaname='                                                                              ' check:innerText='' /&gt;" Guid="f97f5fc1-da16-45d4-b20b-90328ee330be" InformativeScreenshot="82a79bb08870d5cfb39f339782e90699.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Elige a tu notario - Notariado' /&gt;" SearchSteps="Selector" Version="V3" Visibility="Interactive" />
+                                      </uix:NClick.Target>
+                                      <uix:NClick.VerifyOptions>
+                                        <uix:VerifyExecutionOptions DisplayName="Element 'Juan Ignacio'" Mode="Appears">
+                                          <uix:VerifyExecutionOptions.Retry>
+                                            <InArgument x:TypeArguments="x:Boolean" />
+                                          </uix:VerifyExecutionOptions.Retry>
+                                          <uix:VerifyExecutionOptions.Target>
+                                            <uix:TargetAnchorable BrowserURL="https://www.notariado.org/portal/Elige%20a%20tu%20notario%20orden?Nombre=JUAN%20IGNACIO&amp;Apellidos=GOMEZA%20VILLA&amp;CodigoPostal=&amp;Poblacion=&amp;Idioma=" CVScreenId="0d8067a6-36d8-490b-b20b-1ddbfbff18dd" CvTextArea="109, 421, 212, 23" CvTextArgument="J" CvType="Text" DesignTimeRectangle="69, 404, 450, 60" DesignTimeScaleFactor="1.25" FullSelectorArgument="&lt;webctrl parentid='heading0' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='heading0' tag='DIV' type='' class='header-bar d-flex' aaname='                                                                              ' /&gt;" Guid="64552460-e61c-40ca-9a71-5d90145c6751" InformativeScreenshot="d66bd42198599140453bd39c6d346e45.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Elige a tu notario - Notariado' /&gt;" SearchSteps="FuzzySelector" Version="V3" Visibility="Interactive" />
+                                          </uix:VerifyExecutionOptions.Target>
+                                          <uix:VerifyExecutionOptions.Timeout>
+                                            <InArgument x:TypeArguments="x:Double" />
+                                          </uix:VerifyExecutionOptions.Timeout>
+                                        </uix:VerifyExecutionOptions>
+                                      </uix:NClick.VerifyOptions>
+                                    </uix:NClick>
+                                    <uix:NGetAttributeGeneric x:TypeArguments="x:String" Attribute="text" DisplayName="Obtener atributo 'email'" sap:VirtualizedContainerService.HintSize="625.6,240" sap2010:WorkflowViewState.IdRef="NGetAttributeGeneric`1_2" Result="[correoTemp]" ScopeIdentifier="f292e4e5-35c6-4ad6-9b3b-78b6156d4002" Version="V3">
+                                      <uix:NGetAttributeGeneric.Target>
+                                        <uix:TargetAnchorable BrowserURL="https://www.notariado.org/portal/Elige%20a%20tu%20notario%20orden?Nombre=JUAN%20IGNACIO&amp;Apellidos=GOMEZA%20VILLA&amp;CodigoPostal=&amp;Poblacion=&amp;Idioma=" CVScreenId="0d8067a6-36d8-490b-b20b-1ddbfbff18dd" CvTextArea="103, 665, 226, 23" CvTextArgument="jigomeza@correonotarial.org" CvType="Text" DesignTimeRectangle="104, 661, 225, 25" DesignTimeScaleFactor="1.25" ElementType="Text" FullSelectorArgument="&lt;webctrl parentid='collapseP0' tag='A' /&gt;" FuzzyAccuracy="0.59" FuzzySelectorArgument="&lt;webctrl parentid='collapseP0' tag='A' /&gt;" Guid="90ba5e64-f969-40bb-88b1-d3c24f9596b7" InformativeScreenshot="c93c24e369874d14729c0ff7e20d9acf.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Elige a tu notario - Notariado' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V3" Visibility="Interactive" />
+                                      </uix:NGetAttributeGeneric.Target>
+                                    </uix:NGetAttributeGeneric>
+                                    <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="625.6,117.6" sap2010:WorkflowViewState.IdRef="MessageBox_5" Text="[correoTemp.ToString]" />
+                                    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="[indice2]" DataTable="[tablaNotarios]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="625.6,970.4" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
+                                      <ui:ForEachRow.Body>
+                                        <ActivityAction x:TypeArguments="sd:DataRow">
+                                          <ActivityAction.Argument>
+                                            <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentNotario" />
+                                          </ActivityAction.Argument>
+                                          <Sequence DisplayName="Cuerpo" sap:VirtualizedContainerService.HintSize="592,781.6" sap2010:WorkflowViewState.IdRef="Sequence_15">
+                                            <Sequence.Variables>
+                                              <Variable x:TypeArguments="x:Int32" Name="index" />
+                                              <Variable x:TypeArguments="sd:DataTable" Name="tablaFiltrada" />
+                                            </Sequence.Variables>
+                                            <sap:WorkflowViewStateService.ViewState>
+                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                              </scg:Dictionary>
+                                            </sap:WorkflowViewStateService.ViewState>
+                                            <ui:IfElseIfV2 Condition="[CurrentNotario(&quot;CodNotario&quot;).ToString = CurrentRow(&quot;CodNotario&quot;).ToString]" DisplayName="Else If" sap:VirtualizedContainerService.HintSize="529.6,695.2" sap2010:WorkflowViewState.IdRef="IfElseIfV2_1">
+                                              <ui:IfElseIfV2.Else>
+                                                <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,102.4" sap2010:WorkflowViewState.IdRef="Sequence_18">
+                                                  <sap:WorkflowViewStateService.ViewState>
+                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                    </scg:Dictionary>
+                                                  </sap:WorkflowViewStateService.ViewState>
+                                                </Sequence>
+                                              </ui:IfElseIfV2.Else>
+                                              <ui:IfElseIfV2.ElseIfs>
+                                                <sc1:BindingList x:TypeArguments="ui:IfElseIfBlock" AllowEdit="True" AllowNew="True" AllowRemove="True" RaiseListChangedEvents="True" />
+                                              </ui:IfElseIfV2.ElseIfs>
+                                              <ui:IfElseIfV2.Then>
+                                                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="496,383.2" sap2010:WorkflowViewState.IdRef="Sequence_17">
+                                                  <sap:WorkflowViewStateService.ViewState>
+                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                    </scg:Dictionary>
+                                                  </sap:WorkflowViewStateService.ViewState>
+                                                  <Assign sap:VirtualizedContainerService.HintSize="433.6,113.6" sap2010:WorkflowViewState.IdRef="Assign_8">
+                                                    <Assign.To>
+                                                      <OutArgument x:TypeArguments="x:Int32">[index]</OutArgument>
+                                                    </Assign.To>
+                                                    <Assign.Value>
+                                                      <InArgument x:TypeArguments="x:Int32">[tablaNotarios.Rows.IndexOf(CurrentNotario)+2]</InArgument>
+                                                    </Assign.Value>
+                                                  </Assign>
+                                                  <ueab:WriteCellX Cell="[notariosExcel.Sheet(&quot;NOTARIOS_CUBA&quot;).Cell(&quot;F&quot; + index.ToString)]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="433.6,183.2" sap2010:WorkflowViewState.IdRef="WriteCellX_1" Value="[correoTemp]" />
+                                                </Sequence>
+                                              </ui:IfElseIfV2.Then>
+                                            </ui:IfElseIfV2>
+                                          </Sequence>
+                                        </ActivityAction>
+                                      </ui:ForEachRow.Body>
+                                    </ui:ForEachRow>
+                                  </Sequence>
+                                </If.Else>
+                              </If>
+                            </Sequence>
+                          </ActivityAction>
+                        </uix:NApplicationCard.Body>
+                        <uix:NApplicationCard.TargetApp>
+                          <uix:TargetApp Area="-9, -9, 1938, 1038" BrowserType="Edge" ContentHash="QQEkvwuQJUCB7EFj3mRh2A" IconBase64="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" InformativeScreenshot="d1138223d7afdd37b4d3f912fa5a682b.png" Reference="pyrFxN0gFESAa0tjtCFSNA/0HqD20epgUeFhZeHdi8yJQ" Selector="&lt;html app='msedge.exe' url='https://www.notariado.org/portal/' /&gt;" Title="ntp.msn.com/edge/ntp?locale=en-GB&amp;title=New tab&amp;dsp=1&amp;sp=Bing&amp;startpage=1&amp;PC=ASTS" Url="https://www.notariado.org/portal/" />
+                        </uix:NApplicationCard.TargetApp>
+                      </uix:NApplicationCard>
                     </Sequence>
                   </ActivityAction>
-                </uix:NApplicationCard.Body>
-                <uix:NApplicationCard.TargetApp>
-                  <uix:TargetApp Area="-9, -9, 1938, 1038" BrowserType="Edge" ContentHash="QQEkvwuQJUCB7EFj3mRh2A" IconBase64="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" InformativeScreenshot="d1138223d7afdd37b4d3f912fa5a682b.png" Reference="pyrFxN0gFESAa0tjtCFSNA/0HqD20epgUeFhZeHdi8yJQ" Selector="&lt;html app='msedge.exe' url='https://www.notariado.org/portal/' /&gt;" Title="ntp.msn.com/edge/ntp?locale=en-GB&amp;title=New tab&amp;dsp=1&amp;sp=Bing&amp;startpage=1&amp;PC=ASTS" Url="https://www.notariado.org/portal/" />
-                </uix:NApplicationCard.TargetApp>
-              </uix:NApplicationCard>
+                </ui:ForEachRow.Body>
+              </ui:ForEachRow>
             </Sequence>
           </ActivityAction>
-        </ui:ForEachRow.Body>
-      </ui:ForEachRow>
+        </ueab:ExcelApplicationCard.Body>
+      </ueab:ExcelApplicationCard>
     </ueab:SequenceX>
   </Sequence>
 </Activity>
