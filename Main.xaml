@@ -5,7 +5,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1124,5237.6</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1124,5232</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -146,7 +146,7 @@
       <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence DisplayName="Secuencia" sap:VirtualizedContainerService.HintSize="1134.4,5172.8" sap2010:WorkflowViewState.IdRef="Sequence_4">
+  <Sequence DisplayName="Secuencia" sap:VirtualizedContainerService.HintSize="1134.4,5167.2" sap2010:WorkflowViewState.IdRef="Sequence_4">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="tablaNotarios" />
       <Variable x:TypeArguments="sd:DataTable" Name="notariosSinCorreo" />
@@ -158,7 +158,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ueab:SequenceX DisplayName="Ámbito del proceso de Excel único" sap:VirtualizedContainerService.HintSize="1072,5084" sap2010:WorkflowViewState.IdRef="SequenceX_1">
+    <ueab:SequenceX DisplayName="Ámbito del proceso de Excel único" sap:VirtualizedContainerService.HintSize="1072,5078.4" sap2010:WorkflowViewState.IdRef="SequenceX_1">
       <ueab:SequenceX.Variables>
         <Variable x:TypeArguments="x:String" Default="si" Name="ExisteNotario" />
       </ueab:SequenceX.Variables>
@@ -167,13 +167,13 @@
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ueab:ExcelApplicationCard Password="{x:Null}" DisplayName="Utilice el archivo de Excel" sap:VirtualizedContainerService.HintSize="1009.6,4972" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_1" ReadFormatting="Default" ResizeWindow="None" WorkbookPath="NOTARIOS_CUBA.xlsx">
+      <ueab:ExcelApplicationCard Password="{x:Null}" DisplayName="Utilice el archivo de Excel" sap:VirtualizedContainerService.HintSize="1009.6,4966.4" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_1" ReadFormatting="Default" ResizeWindow="None" WorkbookPath="NOTARIOS_CUBA.xlsx">
         <ueab:ExcelApplicationCard.Body>
           <ActivityAction x:TypeArguments="ue:IWorkbookQuickHandle">
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="ue:IWorkbookQuickHandle" Name="notariosExcel" />
             </ActivityAction.Argument>
-            <Sequence DisplayName="Hacer" sap:VirtualizedContainerService.HintSize="976,4679.2" sap2010:WorkflowViewState.IdRef="Sequence_6">
+            <Sequence DisplayName="Hacer" sap:VirtualizedContainerService.HintSize="976,4673.6" sap2010:WorkflowViewState.IdRef="Sequence_6">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -206,25 +206,25 @@
                   </scg:List>
                 </ui:FilterDataTable.SelectColumns>
               </ui:FilterDataTable>
-              <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="[indice]" DataTable="[notariosSinCorreo]" DisplayName="Para cada fila de la tabla de datos" sap:VirtualizedContainerService.HintSize="913.6,4196.8" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+              <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="[indice]" DataTable="[notariosSinCorreo]" DisplayName="Para cada fila de la tabla de datos" sap:VirtualizedContainerService.HintSize="913.6,4191.2" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
                 <ui:ForEachRow.Body>
                   <ActivityAction x:TypeArguments="sd:DataRow">
                     <ActivityAction.Argument>
                       <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
                     </ActivityAction.Argument>
-                    <Sequence DisplayName="Cuerpo" sap:VirtualizedContainerService.HintSize="880,4008" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                    <Sequence DisplayName="Cuerpo" sap:VirtualizedContainerService.HintSize="880,4002.4" sap2010:WorkflowViewState.IdRef="Sequence_7">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Edge ntp.msn.comedgentplocale=en-GB&amp;title=New" sap:VirtualizedContainerService.HintSize="817.6,3921.6" sap2010:WorkflowViewState.IdRef="NApplicationCard_3" InteractionMode="DebuggerApi" ScopeGuid="f292e4e5-35c6-4ad6-9b3b-78b6156d4002" Version="V2">
+                      <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Edge ntp.msn.comedgentplocale=en-GB&amp;title=New" sap:VirtualizedContainerService.HintSize="817.6,3916" sap2010:WorkflowViewState.IdRef="NApplicationCard_3" InteractionMode="DebuggerApi" ScopeGuid="f292e4e5-35c6-4ad6-9b3b-78b6156d4002" Version="V2">
                         <uix:NApplicationCard.Body>
                           <ActivityAction x:TypeArguments="x:Object">
                             <ActivityAction.Argument>
                               <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
                             </ActivityAction.Argument>
-                            <Sequence DisplayName="Hacer" sap:VirtualizedContainerService.HintSize="784,3681.6" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                            <Sequence DisplayName="Hacer" sap:VirtualizedContainerService.HintSize="784,3676" sap2010:WorkflowViewState.IdRef="Sequence_8">
                               <Sequence.Variables>
                                 <Variable x:TypeArguments="x:String" Name="correoTemp" />
                                 <Variable x:TypeArguments="x:String" Name="apellidos" />
@@ -316,27 +316,27 @@
                                   </Catch>
                                 </TryCatch.Catches>
                               </TryCatch>
-                              <If Condition="[ExisteNotario = &quot;no&quot;]" DisplayName="Si" sap:VirtualizedContainerService.HintSize="721.6,2112" sap2010:WorkflowViewState.IdRef="If_2">
+                              <If Condition="[ExisteNotario = &quot;no&quot;]" DisplayName="Si" sap:VirtualizedContainerService.HintSize="721.6,2106.4" sap2010:WorkflowViewState.IdRef="If_2">
                                 <If.Then>
-                                  <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="496,308.8" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                                  <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,304" sap2010:WorkflowViewState.IdRef="Sequence_10">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
-                                    <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Bandeja de mensajes" sap:VirtualizedContainerService.HintSize="433.6,117.6" sap2010:WorkflowViewState.IdRef="MessageBox_4" Text="[&quot;El notario &quot; + CurrentRow(&quot;Nombre&quot;).ToString + &quot; no esta en el sistema&quot;]" />
-                                    <Assign sap:VirtualizedContainerService.HintSize="433.6,104.8" sap2010:WorkflowViewState.IdRef="Assign_5">
-                                      <Assign.To>
-                                        <OutArgument x:TypeArguments="sd:DataTable">[notariosArray]</OutArgument>
-                                      </Assign.To>
-                                      <Assign.Value>
-                                        <InArgument x:TypeArguments="sd:DataTable">[CurrentRow.Table]</InArgument>
-                                      </Assign.Value>
-                                    </Assign>
+                                    <ui:AddQueueItem ServiceBaseAddress="{x:Null}" TimeoutMS="{x:Null}" DisplayName="Add Queue Item" sap:VirtualizedContainerService.HintSize="353.6,217.6" sap2010:WorkflowViewState.IdRef="AddQueueItem_1" Priority="Normal" QueueType="GEN_CorreoCorporativoNot">
+                                      <ui:AddQueueItem.ItemInformation>
+                                        <InArgument x:TypeArguments="x:String" x:Key="CodNoratio">[CurrentRow("CodNotario").ToString]</InArgument>
+                                        <InArgument x:TypeArguments="x:String" x:Key="NIF">[CurrentRow("NIF").ToString]</InArgument>
+                                        <InArgument x:TypeArguments="x:String" x:Key="Nombre">[CurrentRow("Nombre").ToString]</InArgument>
+                                        <InArgument x:TypeArguments="x:String" x:Key="Apellido1">[CurrentRow("Apellido1").ToString]</InArgument>
+                                        <InArgument x:TypeArguments="x:String" x:Key="Apellido2">[CurrentRow("Apellido2").ToString]</InArgument>
+                                      </ui:AddQueueItem.ItemInformation>
+                                    </ui:AddQueueItem>
                                   </Sequence>
                                 </If.Then>
                                 <If.Else>
-                                  <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="688,1640" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                                  <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="688,1639.2" sap2010:WorkflowViewState.IdRef="Sequence_11">
                                     <Sequence.Variables>
                                       <Variable x:TypeArguments="x:Int32" Default="0" Name="indice2" />
                                     </Sequence.Variables>
@@ -369,13 +369,13 @@
                                       </uix:NGetAttributeGeneric.Target>
                                     </uix:NGetAttributeGeneric>
                                     <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="625.6,117.6" sap2010:WorkflowViewState.IdRef="MessageBox_5" Text="[correoTemp.ToString]" />
-                                    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="[indice2]" DataTable="[tablaNotarios]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="625.6,970.4" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
+                                    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="[indice2]" DataTable="[tablaNotarios]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="625.6,969.6" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
                                       <ui:ForEachRow.Body>
                                         <ActivityAction x:TypeArguments="sd:DataRow">
                                           <ActivityAction.Argument>
                                             <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentNotario" />
                                           </ActivityAction.Argument>
-                                          <Sequence DisplayName="Cuerpo" sap:VirtualizedContainerService.HintSize="592,781.6" sap2010:WorkflowViewState.IdRef="Sequence_15">
+                                          <Sequence DisplayName="Cuerpo" sap:VirtualizedContainerService.HintSize="592,780.8" sap2010:WorkflowViewState.IdRef="Sequence_15">
                                             <Sequence.Variables>
                                               <Variable x:TypeArguments="x:Int32" Name="index" />
                                               <Variable x:TypeArguments="sd:DataTable" Name="tablaFiltrada" />
@@ -385,7 +385,7 @@
                                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                               </scg:Dictionary>
                                             </sap:WorkflowViewStateService.ViewState>
-                                            <ui:IfElseIfV2 Condition="[CurrentNotario(&quot;CodNotario&quot;).ToString = CurrentRow(&quot;CodNotario&quot;).ToString]" DisplayName="Else If" sap:VirtualizedContainerService.HintSize="529.6,695.2" sap2010:WorkflowViewState.IdRef="IfElseIfV2_1">
+                                            <ui:IfElseIfV2 Condition="[CurrentNotario(&quot;CodNotario&quot;).ToString = CurrentRow(&quot;CodNotario&quot;).ToString]" DisplayName="Else If" sap:VirtualizedContainerService.HintSize="529.6,694.4" sap2010:WorkflowViewState.IdRef="IfElseIfV2_1">
                                               <ui:IfElseIfV2.Else>
                                                 <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,102.4" sap2010:WorkflowViewState.IdRef="Sequence_18">
                                                   <sap:WorkflowViewStateService.ViewState>
@@ -399,13 +399,13 @@
                                                 <sc1:BindingList x:TypeArguments="ui:IfElseIfBlock" AllowEdit="True" AllowNew="True" AllowRemove="True" RaiseListChangedEvents="True" />
                                               </ui:IfElseIfV2.ElseIfs>
                                               <ui:IfElseIfV2.Then>
-                                                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="496,383.2" sap2010:WorkflowViewState.IdRef="Sequence_17">
+                                                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="496,382.4" sap2010:WorkflowViewState.IdRef="Sequence_17">
                                                   <sap:WorkflowViewStateService.ViewState>
                                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                     </scg:Dictionary>
                                                   </sap:WorkflowViewStateService.ViewState>
-                                                  <Assign sap:VirtualizedContainerService.HintSize="433.6,113.6" sap2010:WorkflowViewState.IdRef="Assign_8">
+                                                  <Assign sap:VirtualizedContainerService.HintSize="433.6,112.8" sap2010:WorkflowViewState.IdRef="Assign_8">
                                                     <Assign.To>
                                                       <OutArgument x:TypeArguments="x:Int32">[index]</OutArgument>
                                                     </Assign.To>
