@@ -324,7 +324,7 @@
                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
-                                    <ui:AddQueueItem ServiceBaseAddress="{x:Null}" TimeoutMS="{x:Null}" DisplayName="Add Queue Item" sap:VirtualizedContainerService.HintSize="353.6,217.6" sap2010:WorkflowViewState.IdRef="AddQueueItem_1" Priority="Normal" QueueType="GEN_CorreoCorporativoNot">
+                                    <ui:AddQueueItem ServiceBaseAddress="{x:Null}" TimeoutMS="{x:Null}" DisplayName="Add Queue Item" FolderPath="anileyrivero@gmail.com's workspace" sap:VirtualizedContainerService.HintSize="353.6,217.6" sap2010:WorkflowViewState.IdRef="AddQueueItem_1" Priority="Normal" QueueType="GEN_CorreoCorporativoNot">
                                       <ui:AddQueueItem.ItemInformation>
                                         <InArgument x:TypeArguments="x:String" x:Key="CodNoratio">[CurrentRow("CodNotario").ToString]</InArgument>
                                         <InArgument x:TypeArguments="x:String" x:Key="NIF">[CurrentRow("NIF").ToString]</InArgument>
