@@ -12,6 +12,8 @@
       "Path": "Main.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
+        "tablaFiltrada&Sequence_15",
+        "index&Sequence_15",
         "indice2&Sequence_11",
         "indice&Sequence_4",
         "notariosArray&Sequence_4",
