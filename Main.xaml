@@ -5,140 +5,128 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1124,5575.2</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1124,5305.6</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
-      <x:String>System.Activities</x:String>
-      <x:String>System.Activities.Statements</x:String>
-      <x:String>System.Activities.Expressions</x:String>
-      <x:String>System.Activities.Validation</x:String>
-      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
       <x:String>Microsoft.VisualBasic</x:String>
       <x:String>Microsoft.VisualBasic.Activities</x:String>
       <x:String>System</x:String>
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Runtime.Collections</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
       <x:String>System.Collections</x:String>
       <x:String>System.Collections.Generic</x:String>
       <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.ComponentModel</x:String>
       <x:String>System.Data</x:String>
       <x:String>System.Diagnostics</x:String>
       <x:String>System.Drawing</x:String>
       <x:String>System.IO</x:String>
       <x:String>System.Linq</x:String>
+      <x:String>System.Linq.Expressions</x:String>
       <x:String>System.Net.Mail</x:String>
+      <x:String>System.Numerics</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>System.Windows.Markup</x:String>
       <x:String>System.Xml</x:String>
       <x:String>System.Xml.Linq</x:String>
+      <x:String>System.Xml.Serialization</x:String>
       <x:String>UiPath.Core</x:String>
       <x:String>UiPath.Core.Activities</x:String>
-      <x:String>System.Windows.Markup</x:String>
-      <x:String>GlobalVariablesNamespace</x:String>
-      <x:String>GlobalConstantsNamespace</x:String>
-      <x:String>UiPath.UIAutomationNext.Enums</x:String>
-      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
-      <x:String>UiPath.UIAutomationNext.Activities</x:String>
-      <x:String>UiPath.Shared.Activities</x:String>
-      <x:String>UiPath.Platform.ObjectLibrary</x:String>
-      <x:String>UiPath.Platform.SyncObjects</x:String>
-      <x:String>System.Runtime.Serialization</x:String>
-      <x:String>UiPath.UIAutomationNext.Models</x:String>
-      <x:String>UiPath.Excel</x:String>
-      <x:String>UiPath.Excel.Activities.Business</x:String>
-      <x:String>System.ComponentModel</x:String>
-      <x:String>System.Xml.Serialization</x:String>
-      <x:String>UiPath.Excel.Model</x:String>
-      <x:String>System.Linq.Expressions</x:String>
-      <x:String>System.Reflection</x:String>
-      <x:String>UiPath.Excel.Activities.Business.Filter</x:String>
-      <x:String>System.Activities.Runtime.Collections</x:String>
-      <x:String>UiPath.DataTableUtilities</x:String>
-      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
-      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
-      <x:String>System.Security</x:String>
-      <x:String>UiPath.Mail</x:String>
-      <x:String>UiPath.Mail.Outlook.Activities</x:String>
-      <x:String>UiPath.Mail.Activities</x:String>
       <x:String>UiPath.Core.Activities.Orchestrator</x:String>
-      <x:String>System.Numerics</x:String>
       <x:String>UiPath.CV</x:String>
-      <x:String>UiPath.Shared.ObjectLibrary</x:String>
       <x:String>UiPath.CV.Activities</x:String>
       <x:String>UiPath.CV.Activities.Interfaces</x:String>
-      <x:String>UiPath.Testing</x:String>
-      <x:String>UiPath.Testing.Activities</x:String>
+      <x:String>UiPath.DataTableUtilities</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.Excel.Activities.Business</x:String>
+      <x:String>UiPath.Excel.Activities.Business.Filter</x:String>
+      <x:String>UiPath.Excel.Model</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Platform.SyncObjects</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Shared.ObjectLibrary</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationNext.Models</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
     <sco:Collection x:TypeArguments="AssemblyReference">
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
       <AssemblyReference>PresentationCore</AssemblyReference>
       <AssemblyReference>PresentationFramework</AssemblyReference>
       <AssemblyReference>System</AssemblyReference>
       <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
       <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
       <AssemblyReference>System.Core</AssemblyReference>
       <AssemblyReference>System.Data</AssemblyReference>
       <AssemblyReference>System.Data.Common</AssemblyReference>
       <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
       <AssemblyReference>System.Drawing</AssemblyReference>
       <AssemblyReference>System.Drawing.Common</AssemblyReference>
       <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
       <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
       <AssemblyReference>System.Net.Mail</AssemblyReference>
       <AssemblyReference>System.ObjectModel</AssemblyReference>
       <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
       <AssemblyReference>System.Xaml</AssemblyReference>
       <AssemblyReference>System.Xml</AssemblyReference>
       <AssemblyReference>System.Xml.Linq</AssemblyReference>
-      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
-      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
-      <AssemblyReference>WindowsBase</AssemblyReference>
-      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
-      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
-      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
-      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
-      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
-      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
-      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
-      <AssemblyReference>UiPath.Web.Activities</AssemblyReference>
-      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
-      <AssemblyReference>UiPath.Platform</AssemblyReference>
-      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
-      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
-      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
-      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
-      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
-      <AssemblyReference>UiPath.Excel</AssemblyReference>
-      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
-      <AssemblyReference>System.ComponentModel</AssemblyReference>
-      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
-      <AssemblyReference>System.Private.Xml</AssemblyReference>
-      <AssemblyReference>NPOI</AssemblyReference>
-      <AssemblyReference>System.Memory.Data</AssemblyReference>
-      <AssemblyReference>System.Console</AssemblyReference>
-      <AssemblyReference>System.Security.Permissions</AssemblyReference>
-      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
-      <AssemblyReference>System.Memory</AssemblyReference>
-      <AssemblyReference>System.Private.Uri</AssemblyReference>
-      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
-      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
-      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
-      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
-      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
-      <AssemblyReference>System.Linq.Async</AssemblyReference>
-      <AssemblyReference>System.Collections</AssemblyReference>
-      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
-      <AssemblyReference>UiPath.Workflow</AssemblyReference>
-      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
-      <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
-      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
-      <AssemblyReference>UiPath.Mail</AssemblyReference>
-      <AssemblyReference>UiPath.Mail.Activities.Design</AssemblyReference>
-      <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
       <AssemblyReference>UiPath.CV</AssemblyReference>
-      <AssemblyReference>UiPath.UIAutomationNext.Activities.Design</AssemblyReference>
       <AssemblyReference>UiPath.CV.Activities</AssemblyReference>
-      <AssemblyReference>UiPath.Testing</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
   <sap:WorkflowViewStateService.ViewState>
@@ -146,38 +134,38 @@
       <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence DisplayName="Secuencia" sap:VirtualizedContainerService.HintSize="1134.4,5510.4" sap2010:WorkflowViewState.IdRef="Sequence_4">
+  <Sequence DisplayName="Secuencia" sap:VirtualizedContainerService.HintSize="1134.4,5240.8" sap2010:WorkflowViewState.IdRef="Sequence_4">
     <Sequence.Variables>
-      <Variable x:TypeArguments="sd:DataTable" Name="tablaNotarios" />
-      <Variable x:TypeArguments="sd:DataTable" Name="notariosSinCorreo" />
-      <Variable x:TypeArguments="sd:DataTable" Name="notariosArray" />
-      <Variable x:TypeArguments="x:Int32" Name="indice">
-        <Variable.Default>
-          <Literal x:TypeArguments="x:Int32" />
-        </Variable.Default>
-      </Variable>
+      <Variable x:TypeArguments="sd:DataTable" Name="TablaNotarios" />
+      <Variable x:TypeArguments="sd:DataTable" Name="NotariosSinCorreo" />
+      <Variable x:TypeArguments="sd:DataTable" Name="NotariosArreglo" />
+      <Variable x:TypeArguments="x:Int32" Default="0" Name="Indice" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ueab:SequenceX DisplayName="Ámbito del proceso de Excel único" sap:VirtualizedContainerService.HintSize="1072,5421.6" sap2010:WorkflowViewState.IdRef="SequenceX_1">
+    <ueab:SequenceX DisplayName="Ámbito del proceso de Excel único" sap:VirtualizedContainerService.HintSize="1072,5152" sap2010:WorkflowViewState.IdRef="SequenceX_1">
       <ueab:SequenceX.Variables>
-        <Variable x:TypeArguments="x:String" Default="si" Name="ExisteNotario" />
+        <Variable x:TypeArguments="x:Boolean" Name="ExisteNotario">
+          <Variable.Default>
+            <Literal x:TypeArguments="x:Boolean" Value="True" />
+          </Variable.Default>
+        </Variable>
       </ueab:SequenceX.Variables>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ueab:ExcelApplicationCard Password="{x:Null}" DisplayName="Utilice el archivo de Excel" sap:VirtualizedContainerService.HintSize="1009.6,5309.6" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_1" ReadFormatting="Default" ResizeWindow="None" WorkbookPath="NOTARIOS_CUBA.xlsx">
+      <ueab:ExcelApplicationCard Password="{x:Null}" DisplayName="Utilice el archivo de Excel" sap:VirtualizedContainerService.HintSize="1009.6,5040" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_1" ReadFormatting="Default" ResizeWindow="None" WorkbookPath="NOTARIOS_CUBA.xlsx">
         <ueab:ExcelApplicationCard.Body>
           <ActivityAction x:TypeArguments="ue:IWorkbookQuickHandle">
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="ue:IWorkbookQuickHandle" Name="notariosExcel" />
             </ActivityAction.Argument>
-            <Sequence DisplayName="Hacer" sap:VirtualizedContainerService.HintSize="976,5016.8" sap2010:WorkflowViewState.IdRef="Sequence_6">
+            <Sequence DisplayName="Hacer" sap:VirtualizedContainerService.HintSize="976,4747.2" sap2010:WorkflowViewState.IdRef="Sequence_6">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -210,35 +198,35 @@
                   </scg:List>
                 </ui:FilterDataTable.SelectColumns>
               </ui:FilterDataTable>
-              <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="[indice]" DataTable="[notariosSinCorreo]" DisplayName="Para cada fila de la tabla de datos" sap:VirtualizedContainerService.HintSize="913.6,4534.4" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+              <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="[indice]" DataTable="[notariosSinCorreo]" DisplayName="Para cada fila de la tabla de datos" sap:VirtualizedContainerService.HintSize="913.6,4264.8" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
                 <ui:ForEachRow.Body>
                   <ActivityAction x:TypeArguments="sd:DataRow">
                     <ActivityAction.Argument>
                       <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
                     </ActivityAction.Argument>
-                    <Sequence DisplayName="Cuerpo" sap:VirtualizedContainerService.HintSize="880,4345.6" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                    <Sequence DisplayName="Cuerpo" sap:VirtualizedContainerService.HintSize="880,4076" sap2010:WorkflowViewState.IdRef="Sequence_7">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Edge ntp.msn.comedgentplocale=en-GB&amp;title=New" sap:VirtualizedContainerService.HintSize="817.6,4259.2" sap2010:WorkflowViewState.IdRef="NApplicationCard_3" InteractionMode="DebuggerApi" ScopeGuid="f292e4e5-35c6-4ad6-9b3b-78b6156d4002" Version="V2">
+                      <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Edge ntp.msn.comedgentplocale=en-GB&amp;title=New" sap:VirtualizedContainerService.HintSize="817.6,3989.6" sap2010:WorkflowViewState.IdRef="NApplicationCard_3" InteractionMode="DebuggerApi" ScopeGuid="f292e4e5-35c6-4ad6-9b3b-78b6156d4002" Version="V2">
                         <uix:NApplicationCard.Body>
                           <ActivityAction x:TypeArguments="x:Object">
                             <ActivityAction.Argument>
                               <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
                             </ActivityAction.Argument>
-                            <Sequence DisplayName="Hacer" sap:VirtualizedContainerService.HintSize="784,3872" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                            <Sequence DisplayName="Hacer" sap:VirtualizedContainerService.HintSize="784,3749.6" sap2010:WorkflowViewState.IdRef="Sequence_8">
                               <Sequence.Variables>
-                                <Variable x:TypeArguments="x:String" Name="correoTemp" />
-                                <Variable x:TypeArguments="x:String" Name="apellidos" />
+                                <Variable x:TypeArguments="x:String" Name="CorreoTemp" />
+                                <Variable x:TypeArguments="x:String" Name="Apellidos" />
                               </Sequence.Variables>
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                              <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="721.6,113.6" sap2010:WorkflowViewState.IdRef="Assign_1">
+                              <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="721.6,114.4" sap2010:WorkflowViewState.IdRef="Assign_1">
                                 <Assign.To>
                                   <OutArgument x:TypeArguments="x:String">[apellidos]</OutArgument>
                                 </Assign.To>
@@ -281,15 +269,15 @@
                                   <uix:TargetAnchorable BrowserURL="https://www.notariado.org/portal/" CVScreenId="54150327-3416-49e3-be53-09c684d2382b" CvElementArea="696, 596, 143, 54" CvTextArea="716, 611, 102, 22" CvTextArgument="BUSCAR &gt;" CvType="Button" DesignTimeRectangle="699, 600, 139, 48" DesignTimeScaleFactor="1.25" ElementType="Button" FullSelectorArgument="&lt;webctrl tag='BUTTON' /&gt;" FuzzyAccuracy="0.99" FuzzySelectorArgument="&lt;webctrl tag='BUTTON' type='' class='btn btn-primary' aaname='Buscar' check:innerText='BUSCAR' /&gt;" Guid="3d98b1fc-a2eb-4833-b18b-2354a0133ebc" InformativeScreenshot="571ba8b6f628336d45ec985654cad9e5.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Inicio - Notariado' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V3" Visibility="Interactive" />
                                 </uix:NClick.Target>
                               </uix:NClick>
-                              <Assign sap:VirtualizedContainerService.HintSize="721.6,113.6" sap2010:WorkflowViewState.IdRef="Assign_19">
+                              <Assign sap:VirtualizedContainerService.HintSize="721.6,114.4" sap2010:WorkflowViewState.IdRef="Assign_19">
                                 <Assign.To>
-                                  <OutArgument x:TypeArguments="x:String">[ExisteNotario]</OutArgument>
+                                  <OutArgument x:TypeArguments="x:Boolean">[ExisteNotario]</OutArgument>
                                 </Assign.To>
                                 <Assign.Value>
-                                  <InArgument x:TypeArguments="x:String">si</InArgument>
+                                  <InArgument x:TypeArguments="x:Boolean">True</InArgument>
                                 </Assign.Value>
                               </Assign>
-                              <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="721.6,690.4" sap2010:WorkflowViewState.IdRef="TryCatch_3">
+                              <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="721.6,691.2" sap2010:WorkflowViewState.IdRef="TryCatch_3">
                                 <TryCatch.Try>
                                   <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Juan Ignacio'" sap:VirtualizedContainerService.HintSize="333.6,193.6" sap2010:WorkflowViewState.IdRef="NClick_6" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="f292e4e5-35c6-4ad6-9b3b-78b6156d4002" Version="V3">
                                     <uix:NClick.Target>
@@ -311,10 +299,10 @@
                                   </uix:NClick>
                                 </TryCatch.Try>
                                 <TryCatch.Catches>
-                                  <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="440,152.8" sap2010:WorkflowViewState.IdRef="Catch`1_12">
+                                  <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="440,153.6" sap2010:WorkflowViewState.IdRef="Catch`1_12">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
@@ -322,19 +310,19 @@
                                       <ActivityAction.Argument>
                                         <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
                                       </ActivityAction.Argument>
-                                      <Assign sap:VirtualizedContainerService.HintSize="433.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_18">
+                                      <Assign sap:VirtualizedContainerService.HintSize="433.6,82.4" sap2010:WorkflowViewState.IdRef="Assign_18">
                                         <Assign.To>
-                                          <OutArgument x:TypeArguments="x:String">[ExisteNotario]</OutArgument>
+                                          <OutArgument x:TypeArguments="x:Boolean">[ExisteNotario]</OutArgument>
                                         </Assign.To>
                                         <Assign.Value>
-                                          <InArgument x:TypeArguments="x:String">no</InArgument>
+                                          <InArgument x:TypeArguments="x:Boolean">False</InArgument>
                                         </Assign.Value>
                                       </Assign>
                                     </ActivityAction>
                                   </Catch>
                                 </TryCatch.Catches>
                               </TryCatch>
-                              <If Condition="[ExisteNotario = &quot;no&quot;]" DisplayName="Si" sap:VirtualizedContainerService.HintSize="721.6,2105.6" sap2010:WorkflowViewState.IdRef="If_2">
+                              <If Condition="[ExisteNotario = false]" DisplayName="Si" sap:VirtualizedContainerService.HintSize="721.6,1979.2" sap2010:WorkflowViewState.IdRef="If_2">
                                 <If.Then>
                                   <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,304" sap2010:WorkflowViewState.IdRef="Sequence_10">
                                     <sap:WorkflowViewStateService.ViewState>
@@ -354,9 +342,9 @@
                                   </Sequence>
                                 </If.Then>
                                 <If.Else>
-                                  <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="688,1640" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                                  <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="688,1512" sap2010:WorkflowViewState.IdRef="Sequence_11">
                                     <Sequence.Variables>
-                                      <Variable x:TypeArguments="x:Int32" Default="0" Name="indice2" />
+                                      <Variable x:TypeArguments="x:Int32" Default="0" Name="Indice2" />
                                     </Sequence.Variables>
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -386,24 +374,23 @@
                                         <uix:TargetAnchorable BrowserURL="https://www.notariado.org/portal/Elige%20a%20tu%20notario%20orden?Nombre=JUAN%20IGNACIO&amp;Apellidos=GOMEZA%20VILLA&amp;CodigoPostal=&amp;Poblacion=&amp;Idioma=" CVScreenId="0d8067a6-36d8-490b-b20b-1ddbfbff18dd" CvTextArea="103, 665, 226, 23" CvTextArgument="jigomeza@correonotarial.org" CvType="Text" DesignTimeRectangle="104, 661, 225, 25" DesignTimeScaleFactor="1.25" ElementType="Text" FullSelectorArgument="&lt;webctrl parentid='collapseP0' tag='A' /&gt;" FuzzyAccuracy="0.59" FuzzySelectorArgument="&lt;webctrl parentid='collapseP0' tag='A' /&gt;" Guid="90ba5e64-f969-40bb-88b1-d3c24f9596b7" InformativeScreenshot="c93c24e369874d14729c0ff7e20d9acf.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Elige a tu notario - Notariado' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V3" Visibility="Interactive" />
                                       </uix:NGetAttributeGeneric.Target>
                                     </uix:NGetAttributeGeneric>
-                                    <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="625.6,117.6" sap2010:WorkflowViewState.IdRef="MessageBox_5" Text="[correoTemp.ToString]" />
-                                    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="[indice2]" DataTable="[tablaNotarios]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="625.6,970.4" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
+                                    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="[indice2]" DataTable="[tablaNotarios]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="625.6,960" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
                                       <ui:ForEachRow.Body>
                                         <ActivityAction x:TypeArguments="sd:DataRow">
                                           <ActivityAction.Argument>
                                             <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentNotario" />
                                           </ActivityAction.Argument>
-                                          <Sequence DisplayName="Cuerpo" sap:VirtualizedContainerService.HintSize="592,781.6" sap2010:WorkflowViewState.IdRef="Sequence_15">
+                                          <Sequence DisplayName="Cuerpo" sap:VirtualizedContainerService.HintSize="592,771.2" sap2010:WorkflowViewState.IdRef="Sequence_15">
                                             <Sequence.Variables>
-                                              <Variable x:TypeArguments="x:Int32" Name="index" />
-                                              <Variable x:TypeArguments="sd:DataTable" Name="tablaFiltrada" />
+                                              <Variable x:TypeArguments="x:Int32" Name="Indice3" />
+                                              <Variable x:TypeArguments="sd:DataTable" Name="TablaFiltrada" />
                                             </Sequence.Variables>
                                             <sap:WorkflowViewStateService.ViewState>
                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                               </scg:Dictionary>
                                             </sap:WorkflowViewStateService.ViewState>
-                                            <ui:IfElseIfV2 Condition="[CurrentNotario(&quot;CodNotario&quot;).ToString = CurrentRow(&quot;CodNotario&quot;).ToString]" DisplayName="Else If" sap:VirtualizedContainerService.HintSize="529.6,695.2" sap2010:WorkflowViewState.IdRef="IfElseIfV2_1">
+                                            <ui:IfElseIfV2 Condition="[CurrentNotario(&quot;CodNotario&quot;).ToString = CurrentRow(&quot;CodNotario&quot;).ToString]" DisplayName="Else If" sap:VirtualizedContainerService.HintSize="529.6,684.8" sap2010:WorkflowViewState.IdRef="IfElseIfV2_1">
                                               <ui:IfElseIfV2.Else>
                                                 <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,102.4" sap2010:WorkflowViewState.IdRef="Sequence_18">
                                                   <sap:WorkflowViewStateService.ViewState>
@@ -425,13 +412,13 @@
                                                   </sap:WorkflowViewStateService.ViewState>
                                                   <Assign sap:VirtualizedContainerService.HintSize="433.6,113.6" sap2010:WorkflowViewState.IdRef="Assign_8">
                                                     <Assign.To>
-                                                      <OutArgument x:TypeArguments="x:Int32">[index]</OutArgument>
+                                                      <OutArgument x:TypeArguments="x:Int32">[Indice3]</OutArgument>
                                                     </Assign.To>
                                                     <Assign.Value>
                                                       <InArgument x:TypeArguments="x:Int32">[tablaNotarios.Rows.IndexOf(CurrentNotario)+2]</InArgument>
                                                     </Assign.Value>
                                                   </Assign>
-                                                  <ueab:WriteCellX Cell="[notariosExcel.Sheet(&quot;NOTARIOS_CUBA&quot;).Cell(&quot;F&quot; + index.ToString)]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="433.6,183.2" sap2010:WorkflowViewState.IdRef="WriteCellX_1" Value="[correoTemp]" />
+                                                  <ueab:WriteCellX Cell="[notariosExcel.Sheet(&quot;NOTARIOS_CUBA&quot;).Cell(&quot;F&quot; + Indice3.ToString)]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="433.6,183.2" sap2010:WorkflowViewState.IdRef="WriteCellX_1" Value="[correoTemp]" />
                                                 </Sequence>
                                               </ui:IfElseIfV2.Then>
                                             </ui:IfElseIfV2>

@@ -12,16 +12,16 @@
       "Path": "Main.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
-        "tablaFiltrada&Sequence_15",
-        "index&Sequence_15",
-        "indice2&Sequence_11",
-        "indice&Sequence_4",
-        "notariosArray&Sequence_4",
-        "tablaNotarios&Sequence_4",
-        "notariosSinCorreo&Sequence_4",
-        "ExisteNotario&SequenceX_1",
-        "correoTemp&Sequence_8",
-        "apellidos&Sequence_8"
+        "TablaFiltrada&Sequence_15",
+        "Indice3&Sequence_15",
+        "Indice2&Sequence_11",
+        "Apellidos&Sequence_8",
+        "CorreoTemp&Sequence_8",
+        "Indice&Sequence_4",
+        "NotariosArreglo&Sequence_4",
+        "NotariosSinCorreo&Sequence_4",
+        "TablaNotarios&Sequence_4",
+        "ExisteNotario&SequenceX_1"
       ],
       "ArgumentsSectionElementsOrder": [
         "GEN_CorreoCorporativoNot"
